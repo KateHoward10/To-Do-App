@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import ToDoList from '../components/ToDoList';
+import { getTasks, postTask } from '../data/api';
 
 const mapStateToProps = state => {
 	return {
@@ -9,7 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onSubmit: () => dispatch({ type: "addTask"}),
+		onLoad: () => dispatch(getTasks()),
+		onSubmit: ( data ) => dispatch(postTask(data)),
 	}
 }
 

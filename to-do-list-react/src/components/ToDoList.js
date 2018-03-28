@@ -6,10 +6,15 @@ class ToDoList extends Component {
 	constructor(props) {
 		super(props);
 	}
+
+	componentDidMount() {
+		this.props.onLoad();
+	}
+
 	render() {
 		return (
 			<div>
-				<Add/>
+				<Add onSubmit={this.props.onSubmit}/>
 			    <List tasks={this.props.tasks}/>
 			</div>
 		);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-const Button = ({buttonName}) => (
+const Button = ({className, buttonName}) => (
 	<div>
-    	<button className="btn btn-primary" >{buttonName}</button>
+    	<button style={{margin: 5}} className={ className } >{buttonName}</button>
 	</div>
 );
 
