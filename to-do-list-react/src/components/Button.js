@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Button = ({className, buttonName}) => (
+const Button = ({className, buttonName, onClick}) => (
 	<div>
-    	<button style={{margin: 5}} className={ className } >{buttonName}</button>
+    	<button onClick={ onClick } style={{margin: 5}} className={ className } >{buttonName}</button>
 	</div>
 );
 

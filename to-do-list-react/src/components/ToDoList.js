@@ -3,9 +3,6 @@ import Add from './Add';
 import List from './List';
 
 class ToDoList extends Component {
-	constructor(props) {
-		super(props);
-	}
 
 	componentDidMount() {
 		this.props.onLoad();
@@ -15,7 +12,7 @@ class ToDoList extends Component {
 		return (
 			<div>
 				<Add onSubmit={this.props.onSubmit}/>
-			    <List tasks={this.props.tasks}/>
+			    <List onEdit={this.props.onEdit} onComplete={this.props.onComplete} onDelete={this.props.onDelete} tasks={this.props.tasks}/>
 			</div>
 		);
 	}

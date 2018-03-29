@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
-import Button from './Button';
+import ListItem from './ListItem';
 
-class List extends Component {
-	constructor(props) {
-		super(props);
-	}
+class List extends Component {	
+
 	render() {
-		const { tasks } = this.props;
+		const { tasks, onDelete, onComplete, onEdit } = this.props;
 		return (
 			<div>
 				{ tasks.count() ?
 					<ul>
-						{ tasks.map(task => (
-							<li className="list-group-item d-flex justify-content-between align-items-center" key={task.get("id")}>
-							{ task.get("task")}
-							<div className="d-flex flex-direction-row">
-								<Button className="btn btn-success btn-sm" buttonName="✓"/>
-								<Button className="btn btn-danger btn-sm" buttonName="☓"/>
-							</div>
-							</li>)
+						{ tasks.map((task, index) => (
+							<ListItem onEdit={ onEdit } onComplete={ onComplete } onDelete={ onDelete } task={ task } key={index} />)
 						)}
 					</ul>
 					:
