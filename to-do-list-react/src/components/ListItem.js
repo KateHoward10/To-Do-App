@@ -51,8 +51,8 @@ class ListItem extends Component {
 		const style = task.get("completed") ? { textDecoration: "line-through" } : null;
 		return (
 			
-			<li style={ style } onClick={this.editable} className="list-group-item d-flex justify-content-between align-items-center" >
-				{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.value }/> : <span>{ task.get("task") }</span>}
+			<li style={ style } className="list-group-item d-flex justify-content-between align-items-center" >
+				{this.state.editable ? <Input onChange={ this.update } onSubmit={this.edit} value={ this.state.value }/> : <span onClick={this.editable}>{ task.get("task") }</span>}
 				<div className="d-flex flex-direction-row">
 					<Button onClick={this.complete} className="btn btn-success btn-sm" buttonName="✓"/>
 					<Button onClick={this.delete} className="btn btn-danger btn-sm" buttonName="☓"/>
